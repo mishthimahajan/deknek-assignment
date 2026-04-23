@@ -23,8 +23,11 @@ const Signup = () => {
       localStorage.setItem("user", JSON.stringify(res.data.user));
       navigate("/dashboard");
     } catch (err) {
-      setError(err.response?.data?.message || "Signup failed");
-    }
+  console.log("Signup error:", err);
+  console.log("Response data:", err.response?.data);
+  console.log("Status:", err.response?.status);
+  setError(err.response?.data?.message || "Signup failed");
+}
      };
 
   return (
